@@ -1,0 +1,805 @@
+<!doctype html>
+
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Metnet | Estrategia clara, procesos eficientes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#009af6",
+              accent: "#ff9414",
+              "background-light": "#f5f7f8",
+              "background-dark": "#1e1e2a",
+            },
+            fontFamily: {
+              sans: ["Nunito", "sans-serif"],
+              display: ["Nunito", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Nunito", sans-serif;
+      }
+      .step-connector::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -50%;
+        width: 100%;
+        height: 2px;
+        background: repeating-linear-gradient(
+          to right,
+          #009af6 0,
+          #009af6 5px,
+          transparent 5px,
+          transparent 10px
+        );
+        z-index: 0;
+      }
+      @media (max-width: 768px) {
+        .step-connector::after {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30"
+  >
+    <div
+      class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden"
+      id="parallax-bg"
+    >
+      <div
+        class="absolute inset-0 opacity-20 dark:opacity-10"
+        style="
+          background-image: radial-gradient(
+            circle at 2px 2px,
+            #009af6 1px,
+            transparent 0
+          );
+          background-size: 40px 40px;
+          transform: translateZ(-1px) scale(2);
+        "
+      ></div>
+    </div>
+    <!-- Sticky Nav -->
+    <nav
+      class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center gap-2">
+            <img
+              alt="Metnet Logo"
+              class="h-10 w-auto"
+              data-alt="Metnet corporate logo blue and white"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWQTzltJKd3fYr2Z_RxiDlk5Te9XOVX3CHBp_Hctj0P4oqklQvNALrQeVxh8lMi17O8YYuQQD23Y5O7R7_fqlpc_FxvTe9eTDmK4LLI4HTixtTWrByvOgB4omkmlIzLhXvl6j2NO6c3RzvJLaKqIXr39ZGiM1mlcINZKaoB7wAzu_VZAbNurmpzfV28kfup3CphIh1ejPrfjWvhVs8iIGRy0HyQ3E66ASVtbVL6CMYmlBRVQzpaK99F0fTmboC664XkPukG4JpLsO"
+            />
+            <span
+              class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white"
+              >Metnet</span
+            >
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-semibold hover:text-primary transition-colors"
+              href="#home"
+              >Home</a
+            ><a
+              class="text-sm font-semibold hover:text-primary transition-colors"
+              href="#services"
+              >Services</a
+            ><a
+              class="text-sm font-semibold hover:text-primary transition-colors"
+              href="#clients"
+              >Clients</a
+            ><a
+              class="text-sm font-semibold hover:text-primary transition-colors"
+              href="#methodology"
+              >Methodology</a
+            ><a
+              class="text-sm font-semibold hover:text-primary transition-colors"
+              href="#products"
+              >Products</a
+            ><a
+              class="text-sm font-semibold hover:text-primary transition-colors"
+              href="#contact"
+              >Contact</a
+            >
+          </div>
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1"
+            >
+              <button
+                class="px-2 py-1 text-xs font-bold rounded bg-white dark:bg-slate-700 shadow-sm"
+              >
+                EN
+              </button>
+              <button class="px-2 py-1 text-xs font-bold opacity-50">ES</button>
+            </div>
+            <button
+              class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >light_mode</span
+              >
+            </button>
+            <a
+              class="hidden sm:block bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform hover:scale-105"
+              href="#contact"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Carousel Section -->
+    <section
+      class="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden"
+      id="home"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 overflow-hidden"
+      >
+        <div
+          class="flex transition-transform duration-700 ease-in-out"
+          id="hero-carousel-track"
+        >
+          <!-- Slide 1: Jose -->
+          <div class="min-w-full grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider"
+              >
+                <span class="relative flex h-2 w-2"
+                  ><span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                  ></span
+                  ><span
+                    class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                  ></span
+                ></span>
+                Software Boutique
+              </div>
+              <h1
+                class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white"
+              >
+                Estrategia clara,
+                <span class="text-primary">Tecnología con propósito</span>
+              </h1>
+              <p
+                class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed"
+              >
+                Transformamos ideas en productos digitales de alto impacto
+                mediante metodologías ágiles y un enfoque centrado en el
+                usuario.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <button
+                  class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-primary/20 transition-all"
+                >
+                  Contactanos</button
+                ><button
+                  class="border-2 border-slate-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+                >
+                  Ver Proyectos
+                </button>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  alt="Jose - Metnet Leadership"
+                  class="w-full h-full object-cover"
+                  src=""
+                />
+              </div>
+              <div
+                class="absolute -bottom-6 -left-6 bg-accent p-6 rounded-xl shadow-xl text-white"
+              >
+                <p class="text-sm font-bold uppercase">Liderazgo</p>
+                <p class="text-3xl font-black">Visión Expert</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2: Placeholder -->
+          <div
+            class="min-w-full grid lg:grid-cols-2 gap-12 items-center opacity-50"
+          >
+            <div class="space-y-8">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider"
+              >
+                Innovación Digital
+              </div>
+              <h1
+                class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white"
+              >
+                Soluciones que <span class="text-primary">Escalan</span>
+              </h1>
+              <p
+                class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed"
+              >
+                Construimos la infraestructura necesaria para que tu negocio
+                crezca sin límites técnicos.
+              </p>
+            </div>
+            <div
+              class="bg-slate-200 dark:bg-slate-800 aspect-square rounded-2xl flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-9xl text-slate-400"
+                >rocket_launch</span
+              >
+            </div>
+          </div>
+          <!-- Slide 3: Placeholder -->
+          <div
+            class="min-w-full grid lg:grid-cols-2 gap-12 items-center opacity-50"
+          >
+            <div class="space-y-8">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider"
+              >
+                Diseño UX/UI
+              </div>
+              <h1
+                class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white"
+              >
+                Experiencias <span class="text-primary">Inolvidables</span>
+              </h1>
+              <p
+                class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed"
+              >
+                Diseñamos interfaces intuitivas que deleitan a tus usuarios y
+                aumentan la retención.
+              </p>
+            </div>
+            <div
+              class="bg-slate-200 dark:bg-slate-800 aspect-square rounded-2xl flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-9xl text-slate-400"
+                >palette</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Client Logos -->
+    <section
+      class="py-16 border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 relative"
+      id="clients"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <p
+          class="text-center text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-10"
+        >
+          Nuestros Clientes
+        </p>
+        <div
+          class="flex flex-wrap justify-center items-center gap-12 md:gap-20 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all"
+        >
+          <img
+            alt="Client Logo 1"
+            class="h-8 w-auto"
+            data-alt="Corporate client logo placeholder one"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtHtP1Bpq51gJqzjbWCf2EA0LSVOzx0hEpxwC98NxPr8C9FLDz26eKzeJvRVu_HdSG9ho67GSYBluatGRZ4vk9e-gBJcj9JfBubliK9MNsxmCCl20HpAMT8R-8oSJ2et0ahC7at-L48lo_3rq5b4qv2t6Nk5lA3qRnylyGi-h917Wu6rtwSQiFauzyhTSSi_J2Ab286kdQEqcxXLD183fslKupiEK9jWDGRbZ2QWI0xSUAlm1-K_iNbXDplJiaRAh27LDlgaWrQWA"
+          />
+          <img
+            alt="Client Logo 2"
+            class="h-8 w-auto"
+            data-alt="Corporate client logo placeholder two"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB39u_gN3II4_GsleyiAgp4CYEh8bL_6Pn0ACCbmTerD2Ve5gbfoeuJdx5TYBQLrXe58clZP8k8AXgBXrC1eA54aqVduDP10L_BAbwp9kVy3kvszOsxKyskSZ6yoCqmTSNtBpzAlZlqP0jXItlpwdow8kTduQXzZ_3pTsmH7ouiIZiU4-Lj_PlBXsO1m6IitSPVaLxGRC7_ChWD9DHlbOAlK0j8vL0H_wyqCEkctX_bATPNX93y0VNYuaFbMsv8lOWhKN7bv5vrpH7p"
+          />
+          <img
+            alt="Client Logo 3"
+            class="h-8 w-auto"
+            data-alt="Corporate client logo placeholder three"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZofVcnoEbCntLDvW4--geb7vVPfCP8X3ue63ZPpd56PeYPlxMTcPfy_qNnH7U80XCGLFkznjBkjJVtWICINdgnTmOEt4FQxp4i3O6NJx-mSKHZX6f3zmr6UTcKXhk-wMrQMBsFOa_28Ub3G1-cc4dsLeD-jZwWJkFz_49L0m2HsfiSKC2A-9EY2yU-j-mgjmTOyhwgKq0vVU3lafPt6QWHhkJRetp1I3U_QqVztkU9I-boMrcV3hbYVAaD5B6XPHtyCAHY5iXDpCK"
+          />
+          <img
+            alt="Client Logo 4"
+            class="h-8 w-auto"
+            data-alt="Corporate client logo placeholder four"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvly_gjWDwcsaeDZ66j3PDLrRIBlCs5osue2SGySC6IaS6-5tunHb--QfSlzh1ckalDjUbzzIf_ABr2sviMjv47Et2rUSlwDaBkEVnsk7naShdm28otT9fO6InEGQ_7wTPqynnHqAHIeXFjjlMEy2tKEiBH6SNfw9mUn5RkZuCiQbS1_A29ltcowrzgrhnMD7o_iHcZKpQgBXP_UZQymwWiJvIxTl1JGIwQnXKLhYqLCU57rBYDkHVuErW2DcAaPfsj260-dsevJsf"
+          />
+          <img
+            alt="Client Logo 5"
+            class="h-8 w-auto"
+            data-alt="Corporate client logo placeholder five"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuChH7nZpOQTFbSiy_FeZFkwMBXvHvaAm4emBlzdestq0XI0qfSMcdmJ98arnf159KmmdulbGMN3Y0BQJhyI8ytsWSEHRk5vUQZzGprY8IX1jnwbJTLQa7ybjCxLvYsJTVYHjM2xBjN2Pcd9I1acecWDbcRlj9BYHoYO-D4UyB1OwmheWCCt_nV6atba6-0euQOqPvcldfl65Ivbgqz38umhV_f0KbEG9ncGc6p3NUQxxFgg80R-9lJbgGUU5BFX3a9mphAKyPP8FLFR"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Methodology -->
+    <section
+      class="py-24 bg-background-light dark:bg-background-dark relative"
+      id="methodology"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-20">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4"
+          >
+            Our Methodology
+          </h2>
+          <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-12 relative">
+          <!-- Step 1 -->
+          <div class="relative group">
+            <div class="mb-8 relative z-10 flex justify-center">
+              <div
+                class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 step-connector"
+              >
+                <span class="material-symbols-outlined text-4xl"
+                  >lightbulb</span
+                >
+              </div>
+            </div>
+            <div class="text-center">
+              <span class="text-primary font-bold text-sm mb-2 block"
+                >STEP 01</span
+              >
+              <h3 class="text-xl font-bold mb-3">Business Understanding</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Analizamos a fondo los objetivos de negocio y el ecosistema del
+                mercado.
+              </p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative group">
+            <div class="mb-8 relative z-10 flex justify-center">
+              <div
+                class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 step-connector"
+              >
+                <span class="material-symbols-outlined text-4xl">search</span>
+              </div>
+            </div>
+            <div class="text-center">
+              <span class="text-primary font-bold text-sm mb-2 block"
+                >STEP 02</span
+              >
+              <h3 class="text-xl font-bold mb-3">Product Discovery</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Definimos la mejor experiencia de usuario y arquitectura técnica
+                escalable.
+              </p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative group">
+            <div class="mb-8 relative z-10 flex justify-center">
+              <div
+                class="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-4xl">code</span>
+              </div>
+            </div>
+            <div class="text-center">
+              <span class="text-primary font-bold text-sm mb-2 block"
+                >STEP 03</span
+              >
+              <h3 class="text-xl font-bold mb-3">Agile Development</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                Construimos de forma iterativa entregando valor real en cada
+                sprint.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Experience Metrics -->
+    <section class="py-20 bg-slate-900 text-white relative">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div class="space-y-2">
+            <p class="text-5xl font-black text-primary">140+</p>
+            <p
+              class="text-slate-400 font-bold uppercase tracking-widest text-sm"
+            >
+              MVPs built
+            </p>
+          </div>
+          <div
+            class="space-y-2 border-y md:border-y-0 md:border-x border-slate-800 py-12 md:py-0"
+          >
+            <p class="text-5xl font-black text-accent">7+</p>
+            <p
+              class="text-slate-400 font-bold uppercase tracking-widest text-sm"
+            >
+              Years experience
+            </p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-5xl font-black text-primary">720K</p>
+            <p
+              class="text-slate-400 font-bold uppercase tracking-widest text-sm"
+            >
+              Dev hours
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Solutions Section -->
+    <section class="py-24 relative" id="services">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1">
+            <h2
+              class="text-4xl font-extrabold text-slate-900 dark:text-white mb-6"
+            >
+              Software a medida para desafíos globales
+            </h2>
+            <p
+              class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
+            >
+              No solo escribimos código, construimos soluciones tecnológicas
+              robustas que escalan. Desde dashboards analíticos hasta
+              arquitecturas cloud complejas.
+            </p>
+            <ul class="space-y-4 mb-10">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span class="font-semibold">Arquitecturas Microservicios</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span class="font-semibold"
+                  >Diseño UX/UI Centrado en Conversion</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span class="font-semibold"
+                  >Seguridad y Encriptación Bancaria</span
+                >
+              </li>
+            </ul>
+            <button
+              class="bg-primary/10 text-primary hover:bg-primary hover:text-white border border-primary/20 px-8 py-3 rounded-lg font-bold transition-all"
+            >
+              Solicitar Auditoría
+            </button>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div
+              class="bg-slate-200 dark:bg-slate-800 p-4 rounded-2xl shadow-2xl"
+            >
+              <img
+                alt="Dashboard Illustration"
+                class="rounded-xl w-full"
+                data-alt="Modern software dashboard interface with charts and data visualization"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDfT9rS7DF2M3rbxi15i4XYQmI3quw70p43YNasxVCWQTKT2MutPv1U25qJV7aYQRy0xHe8McTHzcFb4vCHsMmdJIM0-kObxzC2_S6xLP5yo9PNB8LRIel9wuA5q0JR4BYYqsk8DjjiWlMIwzpbJWYo9Ws9R0PsY1J3mzsXO2hy1P6UV5cwl9SiUx9CwPOpukRZZbLrVghqW5WHcHheJj7DB7nnH-_5riOteU0hhwaRxWocyWcJt7bQ9mAMidK7WePsrnz2kT6cHlK"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products Grid -->
+    <section
+      class="py-24 bg-slate-50 dark:bg-slate-900/30 relative"
+      id="products"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        >
+          <div>
+            <h2
+              class="text-4xl font-extrabold text-slate-900 dark:text-white mb-2"
+            >
+              Internal Products
+            </h2>
+            <p class="text-slate-500">
+              Soluciones propietarias que aceleran negocios.
+            </p>
+          </div>
+          <a
+            class="text-primary font-bold flex items-center gap-2 group"
+            href="#"
+          >
+            View all products
+            <span
+              class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+              >arrow_forward</span
+            >
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Product 1 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group"
+          >
+            <div
+              class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-primary"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >description</span
+              >
+            </div>
+            <h3 class="text-xl font-bold mb-2">Documatic</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">
+              Automatización inteligente de documentos con IA y procesamiento en
+              lenguaje natural.
+            </p>
+            <a
+              class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link"
+              href="#"
+            >
+              Learn more
+              <span
+                class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform"
+                >chevron_right</span
+              >
+            </a>
+          </div>
+          <!-- Product 2 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group"
+          >
+            <div
+              class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-accent"
+            >
+              <span class="material-symbols-outlined text-3xl">qr_code_2</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">QRPass</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">
+              Control de acceso seguro y sin contacto para eventos y oficinas
+              corporativas.
+            </p>
+            <a
+              class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link"
+              href="#"
+            >
+              Learn more
+              <span
+                class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform"
+                >chevron_right</span
+              >
+            </a>
+          </div>
+          <!-- Product 3 -->
+          <div
+            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group"
+          >
+            <div
+              class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-green-500"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >engineering</span
+              >
+            </div>
+            <h3 class="text-xl font-bold mb-2">ERP EnObra</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">
+              Gestión integral para proyectos de construcción e ingeniería civil
+              de gran escala.
+            </p>
+            <a
+              class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link"
+              href="#"
+            >
+              Learn more
+              <span
+                class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform"
+                >chevron_right</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Form -->
+    <section class="py-24 bg-background-dark text-white relative" id="contact">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div>
+            <h2 class="text-4xl font-extrabold mb-6">
+              Hablemos de tu próximo proyecto
+            </h2>
+            <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+              Cuéntanos tus desafíos y nosotros te ayudaremos a construir la
+              solución. Respondemos en menos de 24 horas hábiles.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-500 uppercase">
+                    Email us
+                  </p>
+                  <p class="font-semibold">hello@metnet.tech</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-accent"
+                >
+                  <span class="material-symbols-outlined">call</span>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-slate-500 uppercase">
+                    Call us
+                  </p>
+                  <p class="font-semibold">+1 (555) 000-1234</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-slate-800/50 p-8 md:p-10 rounded-2xl border border-slate-700"
+          >
+            <form action="#" class="space-y-5">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div class="space-y-2">
+                  <label class="text-sm font-bold text-slate-400">Nombre</label>
+                  <input
+                    class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white"
+                    placeholder="John Doe"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-bold text-slate-400"
+                    >Compañía</label
+                  >
+                  <input
+                    class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white"
+                    placeholder="Acme Inc."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div class="space-y-2">
+                  <label class="text-sm font-bold text-slate-400"
+                    >Teléfono</label
+                  >
+                  <input
+                    class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white"
+                    placeholder="+1 234 567"
+                    type="tel"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-bold text-slate-400">Email</label>
+                  <input
+                    class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white"
+                    placeholder="john@company.com"
+                    type="email"
+                  />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-slate-400">Mensaje</label>
+                <textarea
+                  class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white"
+                  placeholder="¿En qué podemos ayudarte?"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button
+                class="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 rounded-lg transition-all transform hover:translate-y-[-2px] shadow-lg shadow-primary/20 uppercase tracking-widest text-sm"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="py-12 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-900"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12"
+        >
+          <div class="flex items-center gap-2">
+            <img
+              alt="Metnet Logo"
+              class="h-8 w-auto grayscale contrast-125"
+              data-alt="Metnet corporate logo small footer version"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH8bxbwIiOghiPaIg9HDW4jSHJ_GK8K9dU_6GOme8pceFtusFjbVKVg8bbAP72X0NCjkCv-h-Wx_DpLZ7eTSnJzHUbve3QA-iCOFPa-yHcTadG7_l6NRcUOk2LgxNTLP6DdqofA00j-tylGDmocTn-zy6It_H4HUAXRsru1mi1Y0vIeVPyPLhA-etiUNw5xbJXjdh7WepqAIM1jtPyVTCD5D7pzURllfL7SVXP1bBOKPd5InTFiHHecqfpWPNaMiw26KV0We3CEpZ7"
+            />
+            <span class="text-xl font-extrabold text-slate-900 dark:text-white"
+              >Metnet</span
+            >
+          </div>
+          <div class="flex gap-8">
+            <a
+              class="text-sm text-slate-500 hover:text-primary font-bold"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="text-sm text-slate-500 hover:text-primary font-bold"
+              href="#"
+              >Terms of Service</a
+            >
+            <a
+              class="text-sm text-slate-500 hover:text-primary font-bold"
+              href="#"
+              >Cookies</a
+            >
+          </div>
+          <div class="flex gap-4">
+            <a
+              class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all"
+              href="#"
+            >
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M22.23 0H1.77C.8 0 0 .8 0 1.77v20.47C0 23.2.8 24 1.77 24h20.46c.98 0 1.77-.8 1.77-1.77V1.77C24 .8 23.2 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96v5.7h-3.56V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all"
+              href="#"
+            >
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center pt-8 border-t border-slate-100 dark:border-slate-900"
+        >
+          <p class="text-xs text-slate-500 font-bold uppercase tracking-widest">
+            © 2024 Metnet Software Boutique. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

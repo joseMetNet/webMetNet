@@ -1,0 +1,219 @@
+---
+// Stitch Generated Hero Component
+---
+
+<section class="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden group" id="home">
+  <!-- Controls -->
+  <button id="hero-prev" class="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-white/20 dark:bg-slate-900/40 hover:bg-white/90 dark:hover:bg-slate-800 text-slate-900 dark:text-white backdrop-blur-xl shadow-lg border border-white/40 dark:border-slate-700/60 transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 hidden md:flex disabled:opacity-0" aria-label="Previous slide">
+    <span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+  </button>
+  <button id="hero-next" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-white/20 dark:bg-slate-900/40 hover:bg-white/90 dark:hover:bg-slate-800 text-slate-900 dark:text-white backdrop-blur-xl shadow-lg border border-white/40 dark:border-slate-700/60 transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 hidden md:flex disabled:opacity-0" aria-label="Next slide">
+    <span class="material-symbols-outlined text-2xl ml-1">arrow_forward_ios</span>
+  </button>
+
+  <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+    <div class="w-full overflow-hidden" id="hero-carousel-container">
+      <div class="flex transition-transform duration-700 ease-in-out" id="hero-carousel-track">
+        
+        <!-- Slide 1: Jose -->
+        <div class="w-full flex-[0_0_100%] grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Software Boutique
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white">
+              Estrategia clara,
+              <span class="text-primary">Tecnología con propósito</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+              Transformamos ideas en productos digitales de alto impacto mediante metodologías ágiles y un enfoque centrado en el usuario.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-primary/20 transition-all">
+                Contactanos
+              </button>
+              <button class="border-2 border-slate-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                Ver Proyectos
+              </button>
+            </div>
+          </div>
+          <div class="relative py-4">
+            <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <img alt="Jose - Metnet Leadership" class="w-full h-full object-cover" src="/hero/jose.png" />
+            </div>
+            <div class="absolute -bottom-2 -left-6 bg-accent p-6 rounded-xl shadow-xl text-white">
+              <p class="text-sm font-bold uppercase">Liderazgo</p>
+              <p class="text-3xl font-black">Visión Expert</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Infrastructure -->
+        <div class="w-full flex-[0_0_100%] grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20 text-xs font-bold uppercase tracking-wider">
+              Innovación Digital
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white">
+              Soluciones que <span class="text-accent">Escalan</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+              Construimos la infraestructura necesaria para que tu negocio crezca sin límites técnicos. Microservicios y arquitecturas cloud de última generación.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button class="bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-accent/20 transition-all">
+                Ver Infraestructura
+              </button>
+            </div>
+          </div>
+          <div class="relative py-4">
+            <div class="bg-slate-200 dark:bg-slate-800 aspect-square rounded-2xl flex items-center justify-center p-12 overflow-hidden relative shadow-2xl">
+              <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent"></div>
+              <span class="material-symbols-outlined text-[120px] text-accent animate-bounce">rocket_launch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: UX/UI -->
+        <div class="w-full flex-[0_0_100%] grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 text-xs font-bold uppercase tracking-wider">
+              Diseño UX/UI
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 dark:text-white">
+              Experiencias <span class="text-green-500">Inolvidables</span>
+            </h1>
+            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+              Diseñamos interfaces intuitivas que deleitan a tus usuarios y aumentan la retención. Cada píxel diseñado para conversiones.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button class="bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-green-500/20 transition-all">
+                Portafolio de Diseño
+              </button>
+            </div>
+          </div>
+          <div class="relative py-4">
+            <div class="bg-slate-200 dark:bg-slate-800 aspect-square rounded-2xl flex items-center justify-center p-12 overflow-hidden relative shadow-2xl">
+               <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent"></div>
+              <span class="material-symbols-outlined text-[120px] text-green-500">palette</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Indicators -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+      <button class="hero-dot h-2.5 rounded-full bg-primary transition-all w-8" data-index="0" aria-label="Go to slide 1"></button>
+      <button class="hero-dot h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 hover:bg-primary/50 transition-all w-2.5" data-index="1" aria-label="Go to slide 2"></button>
+      <button class="hero-dot h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 hover:bg-primary/50 transition-all w-2.5" data-index="2" aria-label="Go to slide 3"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupCarousel() {
+    let currentSlide = 0;
+    const slideCount = 3;
+    const container = document.getElementById('hero-carousel-container');
+    const track = document.getElementById('hero-carousel-track');
+    const dots = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('hero-prev');
+    const nextBtn = document.getElementById('hero-next');
+
+    if (!track) return;
+
+    function updateCarousel() {
+      if (!container || !track) return;
+      const borderPaddingCorrection = 0;
+      const slideWidth = container.clientWidth;
+      track.style.transform = `translate3d(-${currentSlide * slideWidth}px, 0, 0)`;
+      
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.remove('bg-slate-300', 'dark:bg-slate-700', 'hover:bg-primary/50', 'w-2.5');
+          // Add appropriate color based on slide (optional, default primary)
+          if (index === 0) dot.classList.add('bg-primary', 'w-8');
+          if (index === 1) dot.classList.add('bg-accent', 'w-8');
+          if (index === 2) dot.classList.add('bg-green-500', 'w-8');
+        } else {
+          dot.classList.add('bg-slate-300', 'dark:bg-slate-700', 'hover:bg-primary/50', 'w-2.5');
+          dot.classList.remove('bg-primary', 'bg-accent', 'bg-green-500', 'w-8');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slideCount;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+      updateCarousel();
+    }
+
+    let interval = setInterval(nextSlide, 8000);
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 8000);
+    }
+
+    prevBtn?.addEventListener('click', () => {
+      prevSlide();
+      resetInterval();
+    });
+    
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      resetInterval();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        currentSlide = parseInt((e.target as HTMLElement).dataset.index || '0');
+        updateCarousel();
+        resetInterval();
+      });
+    });
+
+    // Touch support for swiping
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    track.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        nextSlide();
+        resetInterval();
+      }
+      if (touchEndX > touchStartX + 50) {
+        prevSlide();
+        resetInterval();
+      }
+    }
+
+    // Initial setup
+    updateCarousel();
+
+    window.addEventListener('resize', updateCarousel);
+  }
+
+  // Run on load and after view transitions (if using Astro ViewTransitions)
+  setupCarousel();
+  document.addEventListener('astro:page-load', setupCarousel);
+</script>

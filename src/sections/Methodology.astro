@@ -1,0 +1,152 @@
+---
+// Interactive 3-Step Methodology Component
+---
+
+<section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden" id="methodology">
+  <div class="max-w-7xl mx-auto px-4 z-10 relative">
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold text-sm mb-2 block tracking-widest uppercase">Cómo Trabajamos</span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+        Nuestra Metodología
+      </h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        Un proceso probado de tres pasos para transformar ideas abstractas en productos digitales robustos, comenzando desde la estrategia hasta la ejecución ágil.
+      </p>
+    </div>
+
+    {/* Expanding Cards Container */}
+    <div class="flex flex-col md:flex-row w-full h-[800px] md:h-[500px] gap-4 md:gap-6 group/container">
+      
+      {/* Step 1: Business Understanding */}
+      <div class="methodology-card relative flex-[1] hover:flex-[3] md:hover:flex-[4] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-slate-300 dark:border-slate-700 shadow-lg group/card flex flex-col justify-end md:justify-start">
+        {/* Background Graphic */}
+        <div class="absolute inset-0 opacity-20 transition-opacity duration-700 group-hover/card:opacity-100 bg-[radial-gradient(circle_at_bottom_right,var(--tw-gradient-stops))] from-primary/40 via-transparent to-transparent"></div>
+        
+        {/* Number Badge */}
+        <div class="absolute top-6 left-6 z-20">
+          <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-primary font-black text-xl border border-slate-100 dark:border-slate-700">
+            01
+          </div>
+        </div>
+
+        {/* Content Container */}
+        <div class="absolute inset-0 flex flex-col justify-end p-8 z-20 transition-transform duration-700 md:translate-y-8 group-hover/card:translate-y-0">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-4xl text-primary bg-white/80 dark:bg-slate-800/80 p-3 rounded-2xl backdrop-blur-sm shadow-sm md:-translate-x-4 transition-all duration-700 group-hover/card:translate-x-0">
+              handshake
+            </span>
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white whitespace-nowrap transition-all duration-700 group-hover/card:text-primary opacity-0 -translate-x-8 group-hover/card:opacity-100 group-hover/card:translate-x-0 hidden md:block">
+              Business Understanding
+            </h3>
+            {/* Mobile Horizontal Title (always visible on mobile) */}
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white whitespace-nowrap md:hidden">
+              Business Understanding
+            </h3>
+          </div>
+          
+          {/* Expanding Tooltip / Description */}
+          <div class="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-700 md:opacity-0 md:group-hover/card:opacity-100 ease-[cubic-bezier(0.4,0,0.2,1)]">
+            <div class="overflow-hidden">
+              <div class="pt-2">
+                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed relative">
+                  La etapa consultiva. Entendemos a fondo tu panorama estratégico, ecosistema de marketing y competencia. Analizamos tus objetivos de negocio, descubrimos cómo funciona tu cultura organizacional e identificamos tus necesidades y desafíos tecnológicos.
+                </p>
+                <div class="mt-6 flex gap-2 flex-wrap">
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Estrategia</span>
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Consultoría</span>
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Metas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Step 2: Discovery */}
+      <div class="methodology-card relative flex-[1] md:flex-[2] hover:flex-[3] md:hover:flex-[4] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-slate-300 dark:border-slate-700 shadow-lg group/card flex flex-col justify-end md:justify-start">
+        <div class="absolute inset-0 opacity-20 transition-opacity duration-700 group-hover/card:opacity-100 bg-[radial-gradient(circle_at_bottom_right,var(--tw-gradient-stops))] from-accent/40 via-transparent to-transparent"></div>
+        
+        <div class="absolute top-6 left-6 z-20">
+          <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-accent font-black text-xl border border-slate-100 dark:border-slate-700">
+            02
+          </div>
+        </div>
+
+        <div class="absolute inset-0 flex flex-col justify-end p-8 z-20 transition-transform duration-700 md:translate-y-8 group-hover/card:translate-y-0">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-4xl text-accent bg-white/80 dark:bg-slate-800/80 p-3 rounded-2xl backdrop-blur-sm shadow-sm md:-translate-x-4 transition-all duration-700 group-hover/card:translate-x-0">
+              travel_explore
+            </span>
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white whitespace-nowrap transition-all duration-700 group-hover/card:text-accent opacity-0 -translate-x-8 group-hover/card:opacity-100 group-hover/card:translate-x-0 hidden md:block">
+              Discovery
+            </h3>
+            {/* Mobile Horizontal Title */}
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white whitespace-nowrap md:hidden">
+              Discovery
+            </h3>
+          </div>
+          
+          <div class="grid grid-rows-[1fr] md:grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-700 md:opacity-0 md:group-hover/card:opacity-100 ease-[cubic-bezier(0.4,0,0.2,1)]">
+            <div class="overflow-hidden">
+              <div class="pt-2">
+                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed relative">
+                  Comenzamos a iterar. Utilizamos metodologías centradas en el usuario como Design Thinking para explorar posibilidades y probar hipótesis. Solo cuando la visión del producto alcanza una claridad absoluta, avanzamos al siguiente paso.
+                </p>
+                <div class="mt-6 flex gap-2 flex-wrap">
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Design Thinking</span>
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Iteración UX</span>
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Prototipado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Step 3: Agile Building */}
+      <div class="methodology-card relative flex-[1] hover:flex-[3] md:hover:flex-[4] transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-slate-300 dark:border-slate-700 shadow-lg group/card flex flex-col justify-end md:justify-start">
+        <div class="absolute inset-0 opacity-20 transition-opacity duration-700 group-hover/card:opacity-100 bg-[radial-gradient(circle_at_bottom_right,var(--tw-gradient-stops))] from-green-500/40 via-transparent to-transparent"></div>
+        
+        <div class="absolute top-6 left-6 z-20">
+          <div class="w-12 h-12 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-green-500 font-black text-xl border border-slate-100 dark:border-slate-700">
+            03
+          </div>
+        </div>
+
+        <div class="absolute inset-0 flex flex-col justify-end p-8 z-20 transition-transform duration-700 md:translate-y-8 group-hover/card:translate-y-0">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="material-symbols-outlined text-4xl text-green-500 bg-white/80 dark:bg-slate-800/80 p-3 rounded-2xl backdrop-blur-sm shadow-sm md:-translate-x-4 transition-all duration-700 group-hover/card:translate-x-0">
+              rocket_launch
+            </span>
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white whitespace-nowrap transition-all duration-700 group-hover/card:text-green-500 opacity-0 -translate-x-8 group-hover/card:opacity-100 group-hover/card:translate-x-0 hidden md:block">
+              Agile Building
+            </h3>
+            {/* Mobile Horizontal Title */}
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white whitespace-nowrap md:hidden">
+              Agile Building
+            </h3>
+          </div>
+          
+          <div class="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-700 md:opacity-0 md:group-hover/card:opacity-100 ease-[cubic-bezier(0.4,0,0.2,1)]">
+            <div class="overflow-hidden">
+              <div class="pt-2">
+                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed relative">
+                  Con requerimientos claros, activamos metodologías ágiles (Scrum/Kanban) para comenzar a construir. Desarrollamos tu proyecto en sprints técnicos que garantizan velocidad de entrega y transparencia total.
+                </p>
+                <div class="mt-6 flex gap-2 flex-wrap">
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Scrum</span>
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Desarrollo Frontend/Backend</span>
+                  <span class="px-3 py-1 bg-white/50 dark:bg-slate-900/50 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
