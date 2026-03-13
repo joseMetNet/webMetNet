@@ -1,21 +1,97 @@
 ---
 import '../styles/global.css';
+import { translations, defaultLang } from '../i18n/translations';
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "Metnet Technology Consulting" } = Astro.props;
+const { title, description = "MetNet Technology Consulting" } = Astro.props;
+const toAsciiJson = (value: unknown) =>
+	JSON.stringify(value)
+		.replace(/</g, '\\u003c')
+		.replace(/[\u007f-\uffff]/g, (char) =>
+			`\\u${char.charCodeAt(0).toString(16).padStart(4, '0')}`
+		);
+const translationsJson = toAsciiJson(translations);
+const i18nScript = `const TRANSLATIONS = ${translationsJson};
+const DEFAULT_LANG = ${JSON.stringify(defaultLang)};
+let currentLang = DEFAULT_LANG;
+
+const resolveKey = (dict, key) => {
+  if (!dict || !key) return null;
+  return key.split('.').reduce((acc, part) => (acc ? acc[part] : null), dict);
+};
+
+const withIndex = (value, el) => {
+  const index = el?.dataset?.i18nIndex;
+  if (index) return \`\${value} \${index}\`;
+  return value;
+};
+
+const applyTranslations = (lang) => {
+  const dict = TRANSLATIONS[lang] || TRANSLATIONS[DEFAULT_LANG];
+  if (!dict) return;
+
+  document.documentElement.lang = lang;
+
+  if (dict.meta?.title) document.title = dict.meta.title;
+  const metaDesc = document.querySelector('meta[name=\"description\"]');
+  if (metaDesc && dict.meta?.description) metaDesc.setAttribute('content', dict.meta.description);
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.dataset.i18n;
+    const value = resolveKey(dict, key);
+    if (value) el.textContent = withIndex(value, el);
+  });
+
+  document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+    const mapping = el.dataset.i18nAttr;
+    if (!mapping) return;
+    mapping.split(',').forEach((pair) => {
+      const [attr, key] = pair.split(':');
+      if (!attr || !key) return;
+      const value = resolveKey(dict, key.trim());
+      if (value) el.setAttribute(attr.trim(), withIndex(value, el));
+    });
+  });
+
+  window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
+};
+
+const setLanguage = (lang) => {
+  const target = TRANSLATIONS[lang] ? lang : DEFAULT_LANG;
+  currentLang = target;
+  localStorage.setItem('lang', target);
+  applyTranslations(target);
+};
+
+const getInitialLang = () => {
+  const stored = localStorage.getItem('lang');
+  if (stored && TRANSLATIONS[stored]) return stored;
+  return DEFAULT_LANG;
+};
+
+currentLang = getInitialLang();
+applyTranslations(currentLang);
+
+window.__setLanguage = setLanguage;
+window.__getLanguage = () => currentLang;
+
+document.addEventListener('DOMContentLoaded', () => applyTranslations(currentLang));
+document.addEventListener('astro:page-load', () => applyTranslations(currentLang));
+`;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 		<meta name="generator" content={Astro.generator} />
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +117,7 @@ const { title, description = "Metnet Technology Consulting" } = Astro.props;
       }
       window.localStorage.setItem('theme', theme);
     </script>
+    <script is:inline set:html={i18nScript}></script>
 	</head>
 	<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30 transition-colors duration-300">
     <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden" id="parallax-bg">

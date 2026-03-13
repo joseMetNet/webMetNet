@@ -1,27 +1,35 @@
 ---
 // Stitch Generated Clients Component
-const logos = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]; // 10 placeholders repeating 1-5
+const logos = [
+  "client 1.png",
+  "client 2.png",
+  "client 3.png",
+  "client 4.png",
+  "client 5.png",
+  "client 6.png",
+  "client 7.png",
+];
 ---
 
 <section class="py-16 border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 relative overflow-hidden" id="clients">
   <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <p class="text-center text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-10">
-      Nuestros Clientes
+    <p class="text-center text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-10" data-i18n="clients.heading">
+      Nuestros clientes
     </p>
   </div>
   
   <div class="relative flex overflow-hidden w-full group [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] -webkit-mask-image:-webkit-linear-gradient(left,transparent,black_10%,black_90%,transparent)">
     <div class="flex w-max animate-infinite-scroll group-hover:[animation-play-state:paused]">
-      {/* First set of 10 logos */}
-      {logos.map((num, i) => (
+      {/* First set of logos */}
+      {logos.map((logo, i) => (
         <div class="flex items-center justify-center min-w-[160px] md:min-w-[240px]">
-          <img alt={`Client Logo ${i + 1}`} class="h-8 md:h-10 w-auto grayscale opacity-50 transition-[filter,opacity] duration-300 hover:grayscale-0 hover:opacity-100" src={`/clients/client${num}.svg`} />
+          <img alt={`Logo de cliente ${i + 1}`} class="h-8 md:h-10 w-auto grayscale opacity-50 transition-[filter,opacity] duration-300 hover:grayscale-0 hover:opacity-100" src={`/clients/${logo}`} data-i18n-attr="alt:clients.logo" data-i18n-index={i + 1} />
         </div>
       ))}
-      {/* Duplicate set of 10 logos for seamless scroll */}
-      {logos.map((num, i) => (
+      {/* Duplicate set of logos for seamless scroll */}
+      {logos.map((logo, i) => (
         <div class="flex items-center justify-center min-w-[160px] md:min-w-[240px]" aria-hidden="true">
-          <img alt={`Client Logo ${i + 1} (Duplicate)`} class="h-8 md:h-10 w-auto grayscale opacity-50 transition-[filter,opacity] duration-300 hover:grayscale-0 hover:opacity-100" src={`/clients/client${num}.svg`} />
+          <img alt={`Logo de cliente duplicado ${i + 1}`} class="h-8 md:h-10 w-auto grayscale opacity-50 transition-[filter,opacity] duration-300 hover:grayscale-0 hover:opacity-100" src={`/clients/${logo}`} data-i18n-attr="alt:clients.logoDuplicate" data-i18n-index={i + 1} />
         </div>
       ))}
     </div>

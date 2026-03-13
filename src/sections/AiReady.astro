@@ -1,0 +1,198 @@
+---
+const capabilities = [
+  {
+    key: 'automation',
+    icon: 'auto_mode',
+    title: 'Automatización',
+    desc: 'Flujos inteligentes para acelerar procesos operativos y reducir fricción.'
+  },
+  {
+    key: 'ml',
+    icon: 'model_training',
+    title: 'Aprendizaje automático',
+    desc: 'Modelos predictivos que convierten datos en decisiones accionables.'
+  },
+  {
+    key: 'genai',
+    icon: 'auto_awesome',
+    title: 'IA generativa',
+    desc: 'Contenido y asistentes que elevan la productividad de tu equipo.'
+  },
+  {
+    key: 'agentic',
+    icon: 'smart_toy',
+    title: 'Soluciones agénticas',
+    desc: 'Agentes que orquestan tareas complejas de principio a fin.'
+  }
+];
+---
+
+<section class="ai-ready-section py-24 bg-slate-950 text-white border-t border-slate-800 relative overflow-hidden" data-ai-ready>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="ai-ready__text max-w-3xl space-y-5">
+      <div class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-slate-400">
+        <span class="h-2 w-2 rounded-full bg-primary animate-pulse" aria-hidden="true"></span>
+        <span data-i18n="ai.eyebrow">IA lista · IA activa</span>
+        <span class="h-2 w-2 rounded-full bg-primary/70 animate-pulse [animation-delay:0.6s]" aria-hidden="true"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-tight" data-i18n="ai.title">
+        Más allá de la velocidad: Inteligencia aplicada.
+      </h2>
+      <p class="ai-ready__copy text-lg text-slate-300 leading-relaxed" data-i18n="ai.desc">
+        En MetNet reforzamos nuestro compromiso de ayudar a cada cliente a elegir la tecnología correcta. Acompañamos tu evolución con expertos en la vanguardia digital.
+      </p>
+    </div>
+
+    <div class="ai-ready__cards mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {capabilities.map((capability) => (
+        <article
+          class="ai-card rounded-2xl border border-slate-800 bg-slate-900/60 p-6 relative overflow-hidden"
+          data-ai-card
+        >
+          <div class="relative z-10 flex items-center gap-4">
+            <div class="ai-card__icon h-12 w-12 rounded-xl border border-slate-800 bg-slate-900 flex items-center justify-center text-primary" data-ai-icon>
+              <span class="material-symbols-outlined text-2xl">{capability.icon}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white" data-i18n={`ai.capabilities.${capability.key}.title`}>
+              {capability.title}
+            </h3>
+          </div>
+          <p class="relative z-10 mt-4 text-sm text-slate-300 leading-relaxed" data-i18n={`ai.capabilities.${capability.key}.desc`}>
+            {capability.desc}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupAiReady() {
+    const section = document.querySelector('[data-ai-ready]');
+    if (!section || section.getAttribute('data-ai-ready-init') === 'true') return;
+    section.setAttribute('data-ai-ready-init', 'true');
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cards = Array.from(section.querySelectorAll('[data-ai-card]'));
+
+    if (prefersReduced) {
+      section.classList.add('is-visible');
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              section.classList.add('is-visible');
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(section);
+    }
+
+    cards.forEach((card) => {
+      const icon = card.querySelector('[data-ai-icon]');
+
+      const handleMove = (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        card.style.setProperty('--mx', `${x}px`);
+        card.style.setProperty('--my', `${y}px`);
+
+        if (!icon) return;
+        const dx = (x - rect.width / 2) / rect.width;
+        const dy = (y - rect.height / 2) / rect.height;
+        icon.style.transform = `translate(${dx * 10}px, ${dy * 10}px)`;
+      };
+
+      const handleLeave = () => {
+        card.style.setProperty('--mx', '50%');
+        card.style.setProperty('--my', '50%');
+        if (icon) icon.style.transform = 'translate(0px, 0px)';
+      };
+
+      card.addEventListener('mousemove', handleMove);
+      card.addEventListener('mouseleave', handleLeave);
+      handleLeave();
+    });
+  }
+
+  setupAiReady();
+  document.addEventListener('astro:page-load', setupAiReady);
+</script>
+
+<style>
+  .ai-ready__text,
+  .ai-ready__cards {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+  }
+
+  .ai-ready-section.is-visible .ai-ready__text {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 120ms;
+  }
+
+  .ai-ready-section.is-visible .ai-ready__cards {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 260ms;
+  }
+
+  .ai-card {
+    --mx: 50%;
+    --my: 50%;
+    transition: border-color 250ms ease, background 250ms ease;
+  }
+
+  .ai-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(200px circle at var(--mx) var(--my), rgba(0, 154, 246, 0.18), transparent 65%);
+    opacity: 0;
+    transition: opacity 250ms ease;
+    z-index: 0;
+  }
+
+  .ai-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 154, 246, 0.35);
+    opacity: 0;
+    transition: opacity 250ms ease;
+    pointer-events: none;
+  }
+
+  .ai-card:hover {
+    border-color: rgba(0, 154, 246, 0.6);
+    background: rgba(15, 23, 42, 0.8);
+  }
+
+  .ai-card:hover::before,
+  .ai-card:hover::after {
+    opacity: 1;
+  }
+
+  .ai-card__icon {
+    transition: transform 200ms ease;
+  }
+
+  .ai-ready__copy {
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-ready__text,
+    .ai-ready__cards {
+      transition: none;
+    }
+  }
+</style>

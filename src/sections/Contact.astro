@@ -6,10 +6,10 @@
   <div class="max-w-7xl mx-auto px-4">
     <div class="grid lg:grid-cols-2 gap-16">
       <div>
-        <h2 class="text-4xl font-extrabold mb-6">
+        <h2 class="text-4xl font-extrabold mb-6" data-i18n="contact.title">
           Hablemos de tu próximo proyecto
         </h2>
-        <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+        <p class="text-slate-400 text-lg mb-10 leading-relaxed" data-i18n="contact.desc">
           Cuéntanos tus desafíos y nosotros te ayudaremos a construir la solución. Respondemos en menos de 24 horas hábiles.
         </p>
         <div class="space-y-6">
@@ -18,10 +18,10 @@
               <span class="material-symbols-outlined">mail</span>
             </div>
             <div>
-              <p class="text-xs font-bold text-slate-500 uppercase">
-                Email us
+              <p class="text-xs font-bold text-slate-500 uppercase" data-i18n="contact.emailLabel">
+                Escríbenos
               </p>
-              <p class="font-semibold">hello@metnet.tech</p>
+              <p class="font-semibold">hello@MetNet.tech</p>
             </div>
           </div>
           <div class="flex items-center gap-4">
@@ -29,8 +29,8 @@
               <span class="material-symbols-outlined">call</span>
             </div>
             <div>
-              <p class="text-xs font-bold text-slate-500 uppercase">
-                Call us
+              <p class="text-xs font-bold text-slate-500 uppercase" data-i18n="contact.phoneLabel">
+                Llámanos
               </p>
               <p class="font-semibold">+1 (555) 000-1234</p>
             </div>
@@ -41,30 +41,30 @@
         <form action="#" class="space-y-5">
           <div class="grid md:grid-cols-2 gap-5">
             <div class="space-y-2">
-              <label class="text-sm font-bold text-slate-400">Nombre</label>
-              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="John Doe" type="text" />
+              <label class="text-sm font-bold text-slate-400" data-i18n="contact.form.name">Nombre</label>
+              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="Juan Pérez" type="text" data-i18n-attr="placeholder:contact.form.namePlaceholder" />
             </div>
             <div class="space-y-2">
-              <label class="text-sm font-bold text-slate-400">Compañía</label>
-              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="Acme Inc." type="text" />
+              <label class="text-sm font-bold text-slate-400" data-i18n="contact.form.company">Compañía</label>
+              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="Empresa S.A." type="text" data-i18n-attr="placeholder:contact.form.companyPlaceholder" />
             </div>
           </div>
           <div class="grid md:grid-cols-2 gap-5">
             <div class="space-y-2">
-              <label class="text-sm font-bold text-slate-400">Teléfono</label>
-              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="+1 234 567" type="tel" />
+              <label class="text-sm font-bold text-slate-400" data-i18n="contact.form.phone">Teléfono</label>
+              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="+57 300 000 0000" type="tel" data-i18n-attr="placeholder:contact.form.phonePlaceholder" />
             </div>
             <div class="space-y-2">
-              <label class="text-sm font-bold text-slate-400">Email</label>
-              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="john@company.com" type="email" />
+              <label class="text-sm font-bold text-slate-400" data-i18n="contact.form.email">Correo</label>
+              <input class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="nombre@empresa.com" type="email" data-i18n-attr="placeholder:contact.form.emailPlaceholder" />
             </div>
           </div>
           <div class="space-y-2">
-            <label class="text-sm font-bold text-slate-400">Mensaje</label>
-            <textarea class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="¿En qué podemos ayudarte?" rows="4"></textarea>
+            <label class="text-sm font-bold text-slate-400" data-i18n="contact.form.message">Mensaje</label>
+            <textarea class="w-full bg-slate-900 border-slate-700 rounded-lg py-3 focus:ring-primary focus:border-primary text-white" placeholder="En qué podemos ayudarte?" rows="4" data-i18n-attr="placeholder:contact.form.messagePlaceholder"></textarea>
           </div>
-          <button class="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 rounded-lg transition-all transform hover:translate-y-[-2px] shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
-            Enviar Mensaje
+          <button class="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 rounded-lg transition-all transform hover:translate-y-[-2px] shadow-lg shadow-primary/20 uppercase tracking-widest text-sm" data-i18n="contact.form.submit">
+            Enviar mensaje
           </button>
         </form>
       </div>

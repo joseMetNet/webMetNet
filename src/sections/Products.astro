@@ -6,61 +6,285 @@
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
       <div>
-        <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-2">
-          Internal Products
+        <h2 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-2" data-i18n="products.title">
+          Productos internos
         </h2>
-        <p class="text-slate-500">
+        <p class="text-slate-500" data-i18n="products.subtitle">
           Soluciones propietarias que aceleran negocios.
         </p>
       </div>
-      <a class="text-primary font-bold flex items-center gap-2 group" href="#">
-        View all products
+      <a class="text-primary font-bold flex items-center gap-2 group" href="#contact">
+        <span data-i18n="products.cta">Contactar ahora</span>
         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
       </a>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-products-grid>
       <!-- Product 1 -->
-      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group">
+      <button class="product-card primary bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group text-left" type="button" data-product-card="documatic" aria-expanded="false" aria-controls="product-panel-documatic">
         <div class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-primary">
           <span class="material-symbols-outlined text-3xl">description</span>
         </div>
         <h3 class="text-xl font-bold mb-2">Documatic</h3>
-        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">
+        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm" data-i18n="products.documatic.card">
           Automatización inteligente de documentos con IA y procesamiento en lenguaje natural.
         </p>
-        <a class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link" href="#">
-          Learn more
+        <div class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link">
+          <span data-i18n="products.learnMore">Ver más</span>
           <span class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform">chevron_right</span>
-        </a>
-      </div>
+        </div>
+        <div class="product-active-bar mt-6 h-1 w-12 rounded-full bg-primary opacity-0 transition-opacity duration-300"></div>
+      </button>
       <!-- Product 2 -->
-      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group">
+      <button class="product-card accent bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group text-left" type="button" data-product-card="qrpass" aria-expanded="false" aria-controls="product-panel-qrpass">
         <div class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-accent">
           <span class="material-symbols-outlined text-3xl">qr_code_2</span>
         </div>
         <h3 class="text-xl font-bold mb-2">QRPass</h3>
-        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">
+        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm" data-i18n="products.qrpass.card">
           Control de acceso seguro y sin contacto para eventos y oficinas corporativas.
         </p>
-        <a class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link" href="#">
-          Learn more
+        <div class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link">
+          <span data-i18n="products.learnMore">Ver más</span>
           <span class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform">chevron_right</span>
-        </a>
-      </div>
+        </div>
+        <div class="product-active-bar mt-6 h-1 w-12 rounded-full bg-accent opacity-0 transition-opacity duration-300"></div>
+      </button>
       <!-- Product 3 -->
-      <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group">
+      <button class="product-card green bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group text-left" type="button" data-product-card="erpenobra" aria-expanded="false" aria-controls="product-panel-erpenobra">
         <div class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-green-500">
           <span class="material-symbols-outlined text-3xl">engineering</span>
         </div>
         <h3 class="text-xl font-bold mb-2">ERP EnObra</h3>
-        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm">
+        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm" data-i18n="products.erpenobra.card">
           Gestión integral para proyectos de construcción e ingeniería civil de gran escala.
         </p>
-        <a class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link" href="#">
-          Learn more
+        <div class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link">
+          <span data-i18n="products.learnMore">Ver más</span>
           <span class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform">chevron_right</span>
-        </a>
+        </div>
+        <div class="product-active-bar mt-6 h-1 w-12 rounded-full bg-green-500 opacity-0 transition-opacity duration-300"></div>
+      </button>
+      <!-- Product 4 -->
+      <button class="product-card violet bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-primary transition-all group text-left" type="button" data-product-card="staffing" aria-expanded="false" aria-controls="product-panel-staffing">
+        <div class="w-14 h-14 bg-slate-50 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-6 text-violet-400">
+          <span class="material-symbols-outlined text-3xl">group</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Staffing MetNet</h3>
+        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm" data-i18n="products.staffing.card">
+          Talento especializado para acelerar equipos con perfiles validados y listos para impactar.
+        </p>
+        <div class="text-primary font-bold text-sm inline-flex items-center gap-1 group/link">
+          <span data-i18n="products.learnMore">Ver más</span>
+          <span class="material-symbols-outlined text-sm group-hover/link:translate-x-0.5 transition-transform">chevron_right</span>
+        </div>
+        <div class="product-active-bar mt-6 h-1 w-12 rounded-full bg-violet-400 opacity-0 transition-opacity duration-300"></div>
+      </button>
+    </div>
+
+    <div class="mt-8 space-y-4">
+      <div id="product-panel-documatic" class="product-panel" data-product-panel="documatic" aria-hidden="true">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8">
+          <div class="grid md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-4">
+              <p class="text-xs font-bold uppercase tracking-widest text-primary mb-2">Documatic</p>
+              <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white" data-i18n="products.documatic.panelTitle">Gestión documental centralizada</h4>
+            </div>
+            <div class="md:col-span-8 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p data-i18n="products.documatic.lead">Documatic centraliza la generación, firma y almacenamiento de documentos en una sola plataforma.</p>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-primary"></span><span data-i18n="products.documatic.bullets.0">Organiza la información por tipo de persona o institución.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-primary"></span><span data-i18n="products.documatic.bullets.1">Controla vencimientos con alertas y trazabilidad completa.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-primary"></span><span data-i18n="products.documatic.bullets.2">Asegura eficiencia, cumplimiento y auditoría continua.</span></li>
+              </ul>
+              <div class="mt-5 flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-slate-400">
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.documatic.flow.0">Genera</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.documatic.flow.1">Firma</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.documatic.flow.2">Archiva</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="product-panel-qrpass" class="product-panel" data-product-panel="qrpass" aria-hidden="true">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8">
+          <div class="grid md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-4">
+              <p class="text-xs font-bold uppercase tracking-widest text-accent mb-2">QRPass</p>
+              <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white" data-i18n="products.qrpass.panelTitle">Accesos rápidos y seguros</h4>
+            </div>
+            <div class="md:col-span-8 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p data-i18n="products.qrpass.lead">QR Pass transforma la entrada a tus eventos en una experiencia rápida, segura y 100% digital.</p>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="products.qrpass.bullets.0">Venta online con emisión automática de accesos QR.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="products.qrpass.bullets.1">Validación en segundos desde móvil o tablet.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-accent"></span><span data-i18n="products.qrpass.bullets.2">Ingreso con reconocimiento facial para elevar la seguridad.</span></li>
+              </ul>
+              <div class="mt-5 flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-slate-400">
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.qrpass.flow.0">Vende</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.qrpass.flow.1">Genera QR</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.qrpass.flow.2">Valida</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="product-panel-erpenobra" class="product-panel" data-product-panel="erpenobra" aria-hidden="true">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8">
+          <div class="grid md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-4">
+              <p class="text-xs font-bold uppercase tracking-widest text-green-500 mb-2">ERP EnObra</p>
+              <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white" data-i18n="products.erpenobra.panelTitle">Control total de obra</h4>
+            </div>
+            <div class="md:col-span-8 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p data-i18n="products.erpenobra.lead">EnObra ERP centraliza la gestión de tus proyectos desde el control de personal en campo hasta la administración de facturación por proyecto y el seguimiento detallado de sus gastos.</p>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-500"></span><span data-i18n="products.erpenobra.bullets.0">Visibilidad total de costos, avances y recursos.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-500"></span><span data-i18n="products.erpenobra.bullets.1">Facturación por proyecto con control de gastos.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-green-500"></span><span data-i18n="products.erpenobra.bullets.2">Decisiones rápidas para optimizar la rentabilidad.</span></li>
+              </ul>
+              <div class="mt-5 flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-slate-400">
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.erpenobra.flow.0">Planifica</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.erpenobra.flow.1">Ejecuta</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.erpenobra.flow.2">Controla</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="product-panel-staffing" class="product-panel" data-product-panel="staffing" aria-hidden="true">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-8">
+          <div class="grid md:grid-cols-12 gap-6 items-start">
+            <div class="md:col-span-4">
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-400 mb-2">Staffing MetNet</p>
+              <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white" data-i18n="products.staffing.panelTitle">Talento técnico curado</h4>
+            </div>
+            <div class="md:col-span-8 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p data-i18n="products.staffing.lead">Staffing MetNet identifica los requerimientos técnicos y presupuestales de tu empresa y se encarga de encontrar el mejor talento del mercado.</p>
+              <ul class="mt-4 space-y-2 text-sm">
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400"></span><span data-i18n="products.staffing.bullets.0">Perfilado técnico alineado a tu stack y cultura.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400"></span><span data-i18n="products.staffing.bullets.1">Gestión completa de búsqueda y contratación.</span></li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400"></span><span data-i18n="products.staffing.bullets.2">Talento altamente calificado, listo para integrarse.</span></li>
+              </ul>
+              <div class="mt-5 flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-slate-400">
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.staffing.flow.0">Define</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.staffing.flow.1">Selecciona</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                <span class="px-3 py-1 rounded-full border border-slate-300/40 dark:border-slate-700" data-i18n="products.staffing.flow.2">Incorpora</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  function setupProducts() {
+    const section = document.querySelector('#products');
+    if (!section || section.getAttribute('data-products-ready') === 'true') return;
+    section.setAttribute('data-products-ready', 'true');
+
+    const cards = Array.from(section.querySelectorAll('[data-product-card]'));
+    const panels = Array.from(section.querySelectorAll('[data-product-panel]'));
+
+    function closeAll() {
+      cards.forEach((card) => {
+        card.classList.remove('is-active');
+        card.setAttribute('aria-expanded', 'false');
+      });
+      panels.forEach((panel) => {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+      });
+    }
+
+    function openProduct(id) {
+      const card = cards.find((item) => item.getAttribute('data-product-card') === id);
+      const panel = panels.find((item) => item.getAttribute('data-product-panel') === id);
+      if (!card || !panel) return;
+      card.classList.add('is-active');
+      card.setAttribute('aria-expanded', 'true');
+      panel.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    cards.forEach((card) => {
+      const id = card.getAttribute('data-product-card');
+      card.addEventListener('click', () => {
+        const isActive = card.classList.contains('is-active');
+        closeAll();
+        if (!isActive && id) openProduct(id);
+      });
+
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          card.click();
+        }
+      });
+    });
+  }
+
+  setupProducts();
+  document.addEventListener('astro:page-load', setupProducts);
+</script>
+
+<style>
+  .product-panel {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(8px);
+    overflow: hidden;
+    transition: max-height 600ms ease, opacity 400ms ease, transform 400ms ease;
+  }
+
+  .product-panel.is-open {
+    max-height: 900px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-card.is-active {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  :global(.dark) .product-card.is-active {
+    background-color: rgba(0, 154, 246, 0.14) !important;
+  }
+
+  .product-card.is-active .product-active-bar {
+    opacity: 1;
+  }
+
+  .product-card.primary.is-active {
+    border-color: #009af6;
+    box-shadow: 0 0 0 1px rgba(0, 154, 246, 0.25);
+  }
+
+  .product-card.accent.is-active {
+    border-color: #ff9414;
+    box-shadow: 0 0 0 1px rgba(255, 148, 20, 0.25);
+  }
+
+  .product-card.green.is-active {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.25);
+  }
+
+  .product-card.violet.is-active {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.25);
+  }
+</style>

@@ -6,41 +6,41 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <a href="#home" class="flex items-center gap-2 group">
-        <img alt="Metnet Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-110" src="/logos/logo.png" />
-        <span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Metnet</span>
+        <img alt="MetNet Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-110" src="/logos/logo.png" />
+        <span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">MetNet</span>
       </a>
       <div class="hidden md:flex items-center gap-1">
-        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#home" data-section="home">
+        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#home" data-section="home" data-i18n="nav.home">
           Inicio
         </a>
-        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#methodology" data-section="methodology">
+        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#methodology" data-section="methodology" data-i18n="nav.methodology">
           Metodología
         </a>
-        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#services" data-section="services">
+        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#services" data-section="services" data-i18n="nav.services">
           Soluciones
         </a>
-        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#products" data-section="products">
+        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#products" data-section="products" data-i18n="nav.products">
           Productos
         </a>
-        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#contact" data-section="contact">
+        <a class="nav-link text-sm font-semibold px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative" href="#contact" data-section="contact" data-i18n="nav.contact">
           Contacto
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" id="mobile-menu-btn" aria-label="Toggle menu">
+      <button class="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" id="mobile-menu-btn" data-i18n-attr="aria-label:nav.menuToggle" aria-label="Alternar menú">
         <span class="material-symbols-outlined text-2xl" id="mobile-menu-icon">menu</span>
       </button>
 
       <div class="hidden md:flex items-center gap-4">
         <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
-          <button class="px-2 py-1 text-xs font-bold rounded bg-white dark:bg-slate-700 shadow-sm">EN</button>
-          <button class="px-2 py-1 text-xs font-bold opacity-50">ES</button>
+          <button class="lang-toggle px-2 py-1 text-xs font-bold rounded transition-colors" type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
+          <button class="lang-toggle px-2 py-1 text-xs font-bold rounded transition-colors" type="button" data-lang-toggle="es" aria-pressed="false">ES</button>
         </div>
-        <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors" id="theme-toggle">
+        <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors" id="theme-toggle" data-i18n-attr="aria-label:nav.themeToggle" aria-label="Cambiar tema">
           <span class="material-symbols-outlined text-[20px]" id="theme-icon">light_mode</span>
         </button>
-        <a class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25" href="#contact">
+        <a class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-primary/25" href="#contact" data-i18n="nav.cta">
           Hablemos
         </a>
       </div>
@@ -50,17 +50,17 @@
   <!-- Mobile Menu -->
   <div class="md:hidden hidden border-t border-slate-200 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl" id="mobile-menu">
     <div class="px-4 py-6 space-y-2">
-      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#home" data-section="home">Inicio</a>
-      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#methodology" data-section="methodology">Metodología</a>
-      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#services" data-section="services">Soluciones</a>
-      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#products" data-section="products">Productos</a>
-      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#contact" data-section="contact">Contacto</a>
+      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#home" data-section="home" data-i18n="nav.home">Inicio</a>
+      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#methodology" data-section="methodology" data-i18n="nav.methodology">Metodología</a>
+      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#services" data-section="services" data-i18n="nav.services">Soluciones</a>
+      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#products" data-section="products" data-i18n="nav.products">Productos</a>
+      <a class="nav-link block text-base font-semibold px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#contact" data-section="contact" data-i18n="nav.contact">Contacto</a>
       <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center gap-4">
         <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
-          <button class="px-2 py-1 text-xs font-bold rounded bg-white dark:bg-slate-700 shadow-sm">EN</button>
-          <button class="px-2 py-1 text-xs font-bold opacity-50">ES</button>
+          <button class="lang-toggle px-2 py-1 text-xs font-bold rounded transition-colors" type="button" data-lang-toggle="en" aria-pressed="false">EN</button>
+          <button class="lang-toggle px-2 py-1 text-xs font-bold rounded transition-colors" type="button" data-lang-toggle="es" aria-pressed="false">ES</button>
         </div>
-        <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors" id="theme-toggle-mobile">
+        <button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors" id="theme-toggle-mobile" data-i18n-attr="aria-label:nav.themeToggle" aria-label="Cambiar tema">
           <span class="material-symbols-outlined text-[20px]">light_mode</span>
         </button>
       </div>
@@ -79,6 +79,7 @@
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleMobile = document.getElementById('theme-toggle-mobile');
     const parallaxBg = document.getElementById('parallax-bg');
+    const langButtons = Array.from(document.querySelectorAll('[data-lang-toggle]'));
 
     // === Scroll Spy: Highlight active nav item based on scroll position ===
     function updateActiveLink() {
@@ -164,6 +165,37 @@
     themeToggle?.addEventListener('click', toggleTheme);
     themeToggleMobile?.addEventListener('click', toggleTheme);
 
+    // === Language Toggle ===
+    function setActiveLangButtons(lang) {
+      langButtons.forEach((btn) => {
+        const isActive = (btn as HTMLElement).dataset.langToggle === lang;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function handleLanguage(lang) {
+      const setLang = (window as any).__setLanguage;
+      if (setLang) setLang(lang);
+      setActiveLangButtons(lang);
+    }
+
+    langButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const lang = (btn as HTMLElement).dataset.langToggle || 'es';
+        handleLanguage(lang);
+      });
+    });
+
+    window.addEventListener('languagechange', (event: Event) => {
+      const detail = (event as CustomEvent).detail as { lang: string };
+      setActiveLangButtons(detail.lang || 'es');
+    });
+
+    const getLang = (window as any).__getLanguage;
+    const initialLang = getLang ? getLang() : document.documentElement.lang || 'es';
+    setActiveLangButtons(initialLang);
+
     // Initial state
     updateActiveLink();
     updateNavStyle();
@@ -192,5 +224,17 @@
   .nav-link:hover::after,
   .nav-link.text-primary::after {
     transform: translateX(-50%) scaleX(1);
+  }
+  .lang-toggle {
+    opacity: 0.5;
+  }
+  .lang-toggle.is-active {
+    opacity: 1;
+    background: white;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+  }
+  :global(.dark) .lang-toggle.is-active {
+    background: #1e293b;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   }
 </style>
