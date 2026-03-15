@@ -130,7 +130,6 @@
 
     function updateCarousel() {
       if (!container || !track) return;
-      const borderPaddingCorrection = 0;
       const slideWidth = container.clientWidth;
       track.style.transform = `translate3d(-${currentSlide * slideWidth}px, 0, 0)`;
       
