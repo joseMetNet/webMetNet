@@ -43,7 +43,13 @@ test.describe('Hero visual checks', () => {
         const containerRect = container.getBoundingClientRect();
         const trackRect = track.getBoundingClientRect();
 
-        const offenders = [];
+        interface Offender {
+          tag: string;
+          cls: string;
+          top: number;
+          bottom: number;
+        }
+        const offenders: Offender[] = [];
         slide.querySelectorAll('*').forEach((el) => {
           const rect = el.getBoundingClientRect();
           if (rect.top < containerRect.top - 1 || rect.bottom > containerRect.bottom + 1) {

@@ -73,7 +73,7 @@ const capabilities = [
     section.setAttribute('data-ai-ready-init', 'true');
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const cards = Array.from(section.querySelectorAll('[data-ai-card]'));
+    const cards = Array.from(section.querySelectorAll('[data-ai-card]')) as HTMLElement[];
 
     if (prefersReduced) {
       section.classList.add('is-visible');
@@ -95,7 +95,7 @@ const capabilities = [
     cards.forEach((card) => {
       const icon = card.querySelector('[data-ai-icon]');
 
-      const handleMove = (event) => {
+      const handleMove = (event: MouseEvent) => {
         const rect = card.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
@@ -105,13 +105,13 @@ const capabilities = [
         if (!icon) return;
         const dx = (x - rect.width / 2) / rect.width;
         const dy = (y - rect.height / 2) / rect.height;
-        icon.style.transform = `translate(${dx * 10}px, ${dy * 10}px)`;
+        (icon as HTMLElement).style.transform = `translate(${dx * 10}px, ${dy * 10}px)`;
       };
 
       const handleLeave = () => {
         card.style.setProperty('--mx', '50%');
         card.style.setProperty('--my', '50%');
-        if (icon) icon.style.transform = 'translate(0px, 0px)';
+        if (icon) (icon as HTMLElement).style.transform = 'translate(0px, 0px)';
       };
 
       card.addEventListener('mousemove', handleMove);

@@ -133,7 +133,6 @@
       if (!nav) return;
       
       const navRect = nav.getBoundingClientRect();
-      const navBottom = navRect.bottom;
       const navMiddle = navRect.top + (navRect.height / 2);
 
       const darkSections = document.querySelectorAll('[data-nav-dark]');
@@ -199,7 +198,7 @@
     themeToggleMobile?.addEventListener('click', toggleTheme);
 
     // === Language Toggle ===
-    function setActiveLangButtons(lang) {
+    function setActiveLangButtons(lang: string) {
       langButtons.forEach((btn) => {
         const isActive = (btn as HTMLElement).dataset.langToggle === lang;
         btn.classList.toggle('is-active', isActive);
@@ -207,7 +206,7 @@
       });
     }
 
-    function handleLanguage(lang) {
+    function handleLanguage(lang: string) {
       const setLang = (window as any).__setLanguage;
       if (setLang) setLang(lang);
       setActiveLangButtons(lang);

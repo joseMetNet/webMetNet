@@ -200,8 +200,8 @@
     if (!section || section.getAttribute('data-products-ready') === 'true') return;
     section.setAttribute('data-products-ready', 'true');
 
-    const cards = Array.from(section.querySelectorAll('[data-product-card]'));
-    const panels = Array.from(section.querySelectorAll('[data-product-panel]'));
+    const cards = Array.from(section.querySelectorAll('[data-product-card]')) as HTMLButtonElement[];
+    const panels = Array.from(section.querySelectorAll('[data-product-panel]')) as HTMLElement[];
 
     function closeAll() {
       cards.forEach((card) => {
@@ -220,7 +220,7 @@
       });
     }
 
-    function openProduct(id) {
+    function openProduct(id: string | null) {
       const card = cards.find((item) => item.getAttribute('data-product-card') === id);
       const panel = panels.find((item) => item.getAttribute('data-product-panel') === id);
       if (!card || !panel) return;
@@ -229,7 +229,7 @@
       panel.classList.remove('hidden');
       
       // Force reflow
-      panel.offsetHeight;
+      (panel as HTMLElement).offsetHeight;
 
       card.classList.add('is-active');
       card.setAttribute('aria-expanded', 'true');
@@ -250,7 +250,7 @@
         if (!isActive && id) openProduct(id);
       });
 
-      card.addEventListener('keydown', (event) => {
+      card.addEventListener('keydown', (event: KeyboardEvent) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           card.click();
