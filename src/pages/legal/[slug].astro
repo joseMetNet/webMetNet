@@ -1,0 +1,112 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../sections/Navigation.astro';
+import Footer from '../../sections/Footer.astro';
+
+export async function getStaticPaths() {
+  const enLegals = await getCollection('legals', ({ id }) => id.startsWith('en/'));
+  return enLegals.map(entry => {
+    const slug = entry.id.replace('en/', '').replace('.md', '');
+    return { params: { slug } };
+  });
+}
+
+const { slug } = Astro.params;
+
+const enEntry = await getEntry('legals', `en/${slug}`);
+const esEntry = await getEntry('legals', `es/${slug}`);
+
+if (!enEntry || !esEntry) {
+  return Astro.redirect('/404');
+}
+
+const { Content: EnContent } = await enEntry.render();
+const { Content: EsContent } = await esEntry.render();
+
+const titles = {
+  'privacy-policy': { en: 'Privacy Policy', es: 'Política de Privacidad' },
+  'terms-of-service': { en: 'Terms of Service', es: 'Términos de Servicio' },
+  'cookie-policy': { en: 'Cookie Policy', es: 'Política de Cookies' },
+  'data-processing-policy': { en: 'Data Processing Policy', es: 'Política de Tratamiento de Datos' },
+};
+
+const pageTitle = titles[slug as keyof typeof titles]?.es || 'Legal';
+---
+
+<Layout title={`MetNet - ${pageTitle}`}>
+  <Navigation />
+  
+  <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden" id="parallax-bg-legal">
+    <div class="absolute inset-0 opacity-10 dark:opacity-5" style="background-image: radial-gradient(circle at 2px 2px, #009af6 1px, transparent 0); background-size: 40px 40px;"></div>
+  </div>
+
+  <main class="relative pt-32 pb-20 px-4 min-h-screen">
+    <div class="max-w-4xl mx-auto bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 shadow-xl shadow-slate-900/5">
+      <div id="legal-content-en" class="prose-custom hidden" data-i18n-show="en">
+        <EnContent />
+      </div>
+      <div id="legal-content-es" class="prose-custom hidden" data-i18n-show="es">
+        <EsContent />
+      </div>
+      
+      <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+        <a href="/" class="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold transition-colors">
+          <span class="material-symbols-outlined text-xl">arrow_back</span>
+          <span data-i18n="legal.backToHome">Volver al inicio</span>
+        </a>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+
+  <script is:inline>
+    function updateLegalVisibility() {
+      const currentLang = window.__getLanguage ? window.__getLanguage() : (localStorage.getItem('lang') || 'es');
+      const enContent = document.getElementById('legal-content-en');
+      const esContent = document.getElementById('legal-content-es');
+      
+      if (currentLang === 'en') {
+        enContent?.classList.remove('hidden');
+        esContent?.classList.add('hidden');
+      } else {
+        enContent?.classList.add('hidden');
+        esContent?.classList.remove('hidden');
+      }
+    }
+
+    // Initial check
+    updateLegalVisibility();
+
+    // Listen for language changes
+    window.addEventListener('languagechange', updateLegalVisibility);
+    
+    // Re-run on Astro navigation
+    document.addEventListener('astro:page-load', updateLegalVisibility);
+  </script>
+</Layout>
+
+<style is:global>
+  .prose-custom h1 {
+    @apply text-3xl md:text-4xl font-extrabold mb-8 text-slate-900 dark:text-white tracking-tight;
+  }
+  .prose-custom h2 {
+    @apply text-xl md:text-2xl font-bold mt-12 mb-4 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2;
+  }
+  .prose-custom h3 {
+    @apply text-lg md:text-xl font-bold mt-8 mb-3 text-slate-800 dark:text-slate-200;
+  }
+  .prose-custom p {
+    @apply mb-4 text-slate-600 dark:text-slate-400 leading-relaxed;
+  }
+  .prose-custom ul {
+    @apply list-disc pl-6 mb-6 text-slate-600 dark:text-slate-400 space-y-2;
+  }
+  .prose-custom li {
+    @apply leading-relaxed;
+  }
+  .prose-custom strong {
+    @apply text-slate-900 dark:text-white font-bold;
+  }
+</style>

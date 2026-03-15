@@ -11,7 +11,10 @@ export const translations = {
       methodology: 'Metodología',
       services: 'Soluciones',
       products: 'Productos',
+      ai: 'IA',
       contact: 'Contacto',
+      whatsapp: 'WhatsApp',
+      email: 'Email',
       cta: 'Hablemos',
       menuToggle: 'Alternar menú',
       themeToggle: 'Cambiar tema'
@@ -28,7 +31,7 @@ export const translations = {
         title2: 'Tecnología con propósito',
         desc: 'Transformamos ideas en productos digitales de alto impacto mediante metodologías ágiles y un enfoque centrado en el usuario.',
         ctaPrimary: 'Contáctanos',
-        ctaSecondary: 'Ver proyectos',
+        ctaSecondary: 'AiReady',
         overlayTitle: 'Liderazgo',
         overlaySubtitle: 'Visión experta',
         imageAlt: 'José - Liderazgo MetNet'
@@ -38,14 +41,14 @@ export const translations = {
         title1: 'Soluciones que',
         title2: 'Escalan',
         desc: 'Construimos la infraestructura necesaria para que tu negocio crezca sin límites técnicos. Microservicios y arquitecturas cloud de última generación.',
-        ctaPrimary: 'Ver infraestructura'
+        ctaPrimary: 'Contáctanos'
       },
       slide3: {
         badge: 'Diseño UX/UI',
         title1: 'Experiencias',
         title2: 'Inolvidables',
         desc: 'Diseñamos interfaces intuitivas que deleitan a tus usuarios y aumentan la retención. Cada píxel está pensado para conversiones.',
-        ctaPrimary: 'Portafolio de diseño'
+        ctaPrimary: 'Contáctanos'
       }
     },
     clients: {
@@ -164,31 +167,30 @@ export const translations = {
     },
     contact: {
       title: 'Hablemos de tu próximo proyecto',
-      desc: 'Cuéntanos tus desafíos y nosotros te ayudaremos a construir la solución. Respondemos en menos de 24 horas hábiles.',
+      desc: 'Cuéntanos tus desafíos y nosotros te ayudaremos a construir la solución. Nuestra promesa es responder lo más inmediato posible: ¡estarás hablando con una persona real en poco tiempo!',
       emailLabel: 'Escríbenos',
-      phoneLabel: 'Llámanos',
-      form: {
-        name: 'Nombre',
-        company: 'Compañía',
-        phone: 'Teléfono',
-        email: 'Correo',
-        message: 'Mensaje',
-        namePlaceholder: 'Juan Pérez',
-        companyPlaceholder: 'Empresa S.A.',
-        phonePlaceholder: '+57 300 000 0000',
-        emailPlaceholder: 'nombre@empresa.com',
-        messagePlaceholder: 'En qué podemos ayudarte?',
-        submit: 'Enviar mensaje'
-      }
+      phoneLabel: 'WhatsApp',
+      ctaEmail: 'Enviar Correo',
+      ctaWhatsapp: 'Escribir por WhatsApp'
     },
     footer: {
+      slogan: 'Estrategia clara, tecnología con propósito.',
+      colSolutions: 'Soluciones',
+      colProducts: 'Productos',
+      colCompany: 'Compañía',
       privacy: 'Política de privacidad',
       terms: 'Términos del servicio',
       cookies: 'Cookies',
-      copyright: '© 2024 MetNet Software Boutique. Todos los derechos reservados.',
+      data: 'Tratamiento de datos',
+      copyright: '© 2026 MetNet Software Boutique. Todos los derechos reservados.',
       logoAlt: 'Logo de MetNet',
       linkedin: 'LinkedIn',
-      github: 'GitHub'
+      github: 'GitHub',
+      instagram: 'Instagram',
+      youtube: 'YouTube'
+    },
+    legal: {
+      backToHome: 'Volver al inicio'
     }
   },
   en: {
@@ -201,7 +203,10 @@ export const translations = {
       methodology: 'Methodology',
       services: 'Solutions',
       products: 'Products',
+      ai: 'AI',
       contact: 'Contact',
+      whatsapp: 'WhatsApp',
+      email: 'Email',
       cta: "Let's talk",
       menuToggle: 'Toggle menu',
       themeToggle: 'Toggle theme'
@@ -218,7 +223,7 @@ export const translations = {
         title2: 'Technology with purpose',
         desc: 'We transform ideas into high impact digital products through agile methods and a user-centered approach.',
         ctaPrimary: 'Contact us',
-        ctaSecondary: 'View projects',
+        ctaSecondary: 'AiReady',
         overlayTitle: 'Leadership',
         overlaySubtitle: 'Expert vision',
         imageAlt: 'Jose - MetNet leadership'
@@ -228,14 +233,14 @@ export const translations = {
         title1: 'Solutions that',
         title2: 'Scale',
         desc: 'We build the infrastructure your business needs to grow without technical limits. Microservices and next-generation cloud architectures.',
-        ctaPrimary: 'View infrastructure'
+        ctaPrimary: 'Contact us'
       },
       slide3: {
         badge: 'UX/UI Design',
         title1: 'Unforgettable',
         title2: 'Experiences',
         desc: 'We design intuitive interfaces that delight users and increase retention. Every pixel is crafted for conversion.',
-        ctaPrimary: 'Design portfolio'
+        ctaPrimary: 'Contact us'
       }
     },
     clients: {
@@ -354,31 +359,30 @@ export const translations = {
     },
     contact: {
       title: 'Let us talk about your next project',
-      desc: 'Tell us your challenges and we will help you build the right solution. We respond within 24 business hours.',
+      desc: 'Tell us your challenges and we will help you build the right solution. Our promise is to respond as immediately as possible: you will be talking to a real person in no time!',
       emailLabel: 'Email us',
-      phoneLabel: 'Call us',
-      form: {
-        name: 'Name',
-        company: 'Company',
-        phone: 'Phone',
-        email: 'Correo',
-        message: 'Message',
-        namePlaceholder: 'John Doe',
-        companyPlaceholder: 'Acme Inc.',
-        phonePlaceholder: '+1 234 567',
-        emailPlaceholder: 'john@company.com',
-        messagePlaceholder: 'How can we help you?',
-        submit: 'Send message'
-      }
+      phoneLabel: 'WhatsApp',
+      ctaEmail: 'Send Email',
+      ctaWhatsapp: 'Message on WhatsApp'
     },
     footer: {
+      slogan: 'Clear strategy, technology with purpose.',
+      colSolutions: 'Solutions',
+      colProducts: 'Products',
+      colCompany: 'Company',
       privacy: 'Privacy policy',
       terms: 'Terms of service',
       cookies: 'Cookies',
-      copyright: ' 2024 MetNet Software Boutique. All rights reserved.',
+      data: 'Data processing',
+      copyright: '© 2026 MetNet Software Boutique. All rights reserved.',
       logoAlt: 'MetNet logo',
       linkedin: 'LinkedIn',
-      github: 'GitHub'
+      github: 'GitHub',
+      instagram: 'Instagram',
+      youtube: 'YouTube'
+    },
+    legal: {
+      backToHome: 'Back to home'
     }
   }
 };
